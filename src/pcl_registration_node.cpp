@@ -154,7 +154,7 @@ void PointCloudHandlerNode::performNDTRegistration()
             // Transforming unfiltered, input cloud using found transform.
   pcl::transformPointCloud (*input_cloud, *output_cloud, ndt.getFinalTransformation ());
   // Saving transformed input cloud.
-  pcl::io::savePCDFileASCII ("src/pcl_registration/data/transformed.pcd", *output_cloud);
+  pcl::io::savePCDFileASCII (output_cloud_path_, *output_cloud);
 }
 
 void PointCloudHandlerNode::visualize()
