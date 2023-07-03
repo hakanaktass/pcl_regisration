@@ -46,8 +46,4 @@ ros2 launch pcl_registration pcl_registration.launch.xml
 
 ## Results
 
-```
-ros2 launch pcl_registration pcl_registration.launch.xml 
-
-```
 <img src="./img/pcl_registration.png" width="480px">
