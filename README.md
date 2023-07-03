@@ -1,6 +1,10 @@
 # pcl_regisration
 A ROS 2 Package for Pointcloud (.pcd file) registration
 
+## Requirements
+- [ROS2 Humble](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html)
+- [PCL Library](https://pointclouds.org/downloads/)
+
 ## Firstly create workspace:
 ```
 mkdir -p ~/ros2_ws/src
@@ -26,7 +30,9 @@ Please update necessary paths on pcl_registration.param.yaml and update interfac
 | Parameter Name                 | Description                                                     | value                                             |
 | ------------------------------ | --------------------------------------------------------------- | ------------------------------------------------- |
 | mode                           | ROS or PCL Visualization (Included in Launch file)              | "ROS" or "PCL" (string)                           |
-| input_cloud_path               | First input cloud path                                          | absolute path for first input pointcloud (string) |
+| input_cloud_path               | Input cloud path                                                | absolute path for input pointcloud (string)       | 
+| target_cloud_path              | Target cloud path                                               | absolute path for target pointcloud (string)      |
+| output_cloud_path              | Output cloud path                                               | absolute path for outpu pointcloud (string)       |
 
 ## Launch 
 
@@ -36,3 +42,11 @@ If selected mode is "ROS" in launch file, then rviz2 is open and you can see dif
 source install/setup.bash
 ros2 launch pcl_registration pcl_registration.launch.xml
 ```
+
+
+## Results
+
+```
+ros2 launch pcl_registration pcl_registration.launch.xml 
+```
+<img src="./img/pcl_registration.png" width="480px">
