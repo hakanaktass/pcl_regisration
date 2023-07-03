@@ -1,0 +1,5 @@
+/**:
+  ros__parameters:
+    target_cloud_path: "src/pcl_registration/data/capture0001.pcd"
+    input_cloud_path: "src/pcl_registration/data/capture0002.pcd" 
+    output_cloud_path: "src/pcl_registration/data/transformed.pcd"

@@ -1,0 +1,15 @@
+<launch>
+
+    <arg name="pcl_registration_param_path" default="$(find-pkg-share pcl_registration)/config/pcl_registration.param.yaml"/>
+    <arg name="rviz_config" default="$(find-pkg-share pcl_registration)/rviz/pcl_registration.rviz"/>
+    <arg name="mode" default="ROS" description="ROS or PCL"/>
+
+    <node pkg="pcl_registration" exec="pcl_registration_node" name="pcl_registration_node">
+        <param from="$(var pcl_registration_param_path)"/>
+        <param name="mode" value="$(var mode)"/>
+    </node>
+
+    <node pkg="rviz2" exec="rviz2" name="rviz2" output="screen" args="-d $(var rviz_config)" if="$(eval &quot;'$(var mode)' == 'ROS' &quot;)"/>
+
+</launch>
+
